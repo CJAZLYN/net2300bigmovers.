@@ -1,0 +1,23 @@
+#!/bin/bash
+# fetch_bigmovers.sh - formatted version
+# Author: Jazlyn Collyear
+
+URL="https://gdsapi.cnbc.com/market-mover/groupMover/SP500/CHANGE_PCT/BOTH/12.json"
+LOG="../logs/jazlyn.collyear.bigmovers"
+DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+
+
+# fetch and save
+echo "=== Date: $DATE ===" >> "$LOG"
+echo "Source: $URL" >> "$LOG"
+echo "----------------------------------------" >> "$LOG"
+curl -s "$URL" >> "$LOG"
+echo -e "\n\n" >> "$LOG"
+
+echo "Data appended to $LOG"
+
+curl -s "$URL" | jq -r '.FormattedQuote[] | "\(.symbol): \(.name) | Price: \(.last) | Change: \(.changePct)%"' >> "$LOG"
+
+echo -e "\n\n" >> "$LOG"
+echo "Data appended to $LOG"
+
