@@ -1,0 +1,7 @@
+Last login: Tue Oct  7 03:21:52 2025 from 68.39.50.176
+[jazlyn.collyear@ip-172-31-26-142 ~]$ cd ~/net2300bigmovers/scripts
+[jazlyn.collyear@ip-172-31-26-142 scripts]$ ./fetch_bigmovers.sh
+Data appended to ../logs/jazlyn.collyear.bigmovers
+[jazlyn.collyear@ip-172-31-26-142 scripts]$ cat ../logs/jazlyn.collyear.bigmovers
+=== Date: 2025-10-07 03:35:31 UTC ===
+Source: https://gdsapi.cnbc.com/market-mover/groupMover/SP500/CHANGE_PCT/BOTH/12.json
